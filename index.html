@@ -1,0 +1,536 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 22 | A Birthday Book</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Serif+Display&family=Parisienne&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- MUSIC BUTTON -->
+  <button id="musicToggle" class="music-toggle" aria-label="Toggle music">
+    ♫ Music
+  </button>
+
+  <!-- 1. PASSWORD SCREEN -->
+  <section id="passwordScreen" class="screen active-screen">
+    <div class="password-box">
+
+      <div class="tiny-heart">♥</div>
+
+      <p class="eyebrow">A little birthday surprise</p>
+
+      <h1>Something made<br>just for you.</h1>
+
+      <p class="soft-text">
+        Before you enter this little world,<br>
+        there's a word you need to know.
+      </p>
+
+      <input
+        type="password"
+        id="passwordInput"
+        placeholder="Enter our secret word"
+        autocomplete="off"
+      >
+
+      <button class="primary-btn" onclick="unlockBook()">
+        Unlock my book ♡
+      </button>
+
+      <p id="passwordError" class="error-text"></p>
+
+      <p class="bottom-note">made with love, just for you</p>
+
+    </div>
+  </section>
+
+
+  <!-- 2. COVER SCREEN -->
+  <section id="coverScreen" class="screen hidden">
+
+    <div class="cover-wrapper">
+
+      <div class="cover-image-container">
+
+        <img
+          src="cover.png"
+          alt="Birthday book cover"
+          class="cover-image"
+        >
+
+        <button class="cover-open-btn" onclick="showPage('contents')">
+          Open this book ♡
+        </button>
+
+      </div>
+
+      <p class="cover-caption">
+        A little world of memories, letters & promises.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- 3. TABLE OF CONTENTS -->
+  <section id="contents" class="screen hidden">
+
+    <div class="paper contents-paper">
+
+      <p class="eyebrow">Chapter 22</p>
+
+      <h1>Contents</h1>
+
+      <p class="soft-text">
+        A few little pages that belong to you.
+      </p>
+
+      <div class="contents-list">
+
+        <button onclick="showPage('promises')">
+          <span class="chapter-no">01</span>
+          <span class="chapter-title">22 Little Promises</span>
+          <span class="chapter-icon">♥</span>
+        </button>
+
+        <button onclick="showPage('specialDays')">
+          <span class="chapter-no">02</span>
+          <span class="chapter-title">Some Special Days of Us</span>
+          <span class="chapter-icon">♡</span>
+        </button>
+
+        <button onclick="showPage('littleLetters')">
+          <span class="chapter-no">03</span>
+          <span class="chapter-title">Letters for Little Moments</span>
+          <span class="chapter-icon">✉</span>
+        </button>
+
+        <button onclick="showPage('birthdayLetter')">
+          <span class="chapter-no">04</span>
+          <span class="chapter-title">A Letter on Your Birthday</span>
+          <span class="chapter-icon">♡</span>
+        </button>
+
+        <button onclick="showPage('lastPage')">
+          <span class="chapter-no">05</span>
+          <span class="chapter-title">The Last Page</span>
+          <span class="chapter-icon">✧</span>
+        </button>
+
+      </div>
+
+      <div class="page-footer">
+
+        <button class="text-btn" onclick="showPage('coverScreen')">
+          ← Back to cover
+        </button>
+
+        <span>01</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- 4. 22 PROMISES -->
+  <section id="promises" class="screen hidden">
+
+    <div class="paper promises-paper">
+
+      <p class="eyebrow">A few things I mean</p>
+
+      <h1>22 Little Promises</h1>
+
+      <p class="soft-text">
+        Each little heart holds a promise.<br>
+        Tap one and read it slowly.
+      </p>
+
+      <div id="heartGrid" class="heart-grid"></div>
+
+      <p class="script-text">
+        Twenty-two little promises, made with care.
+      </p>
+
+      <div class="page-footer">
+
+        <button class="text-btn" onclick="showPage('contents')">
+          ← Contents
+        </button>
+
+        <span>02</span>
+
+        <button class="text-btn" onclick="showPage('specialDays')">
+          Next →
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- 5. SPECIAL DAYS OF US -->
+  <section id="specialDays" class="screen hidden">
+
+    <div class="paper special-paper">
+
+      <p class="eyebrow">Our little timeline</p>
+
+      <h1>Some Special Days of Us</h1>
+
+      <p class="soft-text">
+        Some days become memories without us even realizing.<br>
+        These are a few days I want to keep close.
+      </p>
+
+      <div class="timeline">
+
+        <article class="day-card">
+
+          <span class="day-label">SPECIAL DAY 01</span>
+
+          <h2 contenteditable="true">
+            A day I will always remember
+          </h2>
+
+          <p contenteditable="true">
+            October 19, 2025 — The Day We Started Talking.
+            The day our conversation started and everything slowly became special.
+          </p>
+
+        </article>
+
+
+        <article class="day-card">
+
+          <span class="day-label">SPECIAL DAY 02</span>
+
+          <h2 contenteditable="true">
+            The Day I'll never forget
+          </h2>
+
+          <p contenteditable="true">
+            January 15, 2026 — The Day We Chose Each Other.
+            The day we decided that we were meant to be together.
+          </p>
+
+        </article>
+
+
+        <article class="day-card">
+
+          <span class="day-label">SPECIAL DAY 03</span>
+
+          <h2 contenteditable="true">
+            A day that made me happy
+          </h2>
+
+          <p contenteditable="true">
+            September 26, 2026 — My Birthday.
+            You put so much effort into choosing gifts for me.
+            You made me feel so happy and special, and I will always
+            remember the way you made my birthday beautiful.
+          </p>
+
+        </article>
+
+
+        <article class="day-card">
+
+          <span class="day-label">SPECIAL DAY 04</span>
+
+          <h2 contenteditable="true">
+            One of my favourite moments
+          </h2>
+
+          <p contenteditable="true">
+            February 15, 2026 — Our First Place Together.
+            The first place we went together was the Shiva temple near our home.
+            A simple visit, but a beautiful memory that will always stay with me. ❤️
+          </p>
+
+        </article>
+
+      </div>
+
+      <p class="script-text">
+        There are so many more days I hope we get to write about.
+      </p>
+
+      <div class="page-footer">
+
+        <button class="text-btn" onclick="showPage('promises')">
+          ← Promises
+        </button>
+
+        <span>03</span>
+
+        <button class="text-btn" onclick="showPage('littleLetters')">
+          Next →
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- 6. LITTLE LETTERS -->
+  <section id="littleLetters" class="screen hidden">
+
+    <div class="paper letters-paper">
+
+      <p class="eyebrow">Tiny letters for you</p>
+
+      <h1>Read When...</h1>
+
+      <p class="soft-text">
+        Pick an envelope. There's a little note inside.
+      </p>
+
+      <div class="envelope-grid">
+
+        <button class="envelope" onclick="openLittleLetter(0)">
+          <span class="envelope-icon">✉</span>
+          <span>When you need a smile</span>
+        </button>
+
+        <button class="envelope" onclick="openLittleLetter(1)">
+          <span class="envelope-icon">✉</span>
+          <span>When things feel difficult</span>
+        </button>
+
+        <button class="envelope" onclick="openLittleLetter(2)">
+          <span class="envelope-icon">✉</span>
+          <span>When you need encouragement</span>
+        </button>
+
+        <button class="envelope" onclick="openLittleLetter(3)">
+          <span class="envelope-icon">✉</span>
+          <span>When you want to feel appreciated</span>
+        </button>
+
+      </div>
+
+      <div class="page-footer">
+
+        <button class="text-btn" onclick="showPage('specialDays')">
+          ← Special Days
+        </button>
+
+        <span>04</span>
+
+        <button class="text-btn" onclick="showPage('birthdayLetter')">
+          Next →
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- 7. BIRTHDAY LETTER -->
+  <section id="birthdayLetter" class="screen hidden">
+
+    <div class="paper birthday-letter-paper">
+
+      <p class="eyebrow">A letter from my heart</p>
+
+      <h1>Dear chinnoda❤️,</h1>
+
+      <div class="long-letter" contenteditable="true">
+
+        <p>
+          Nuvvu naa life loki vachina tarvatha, chala chinna chinna moments
+          kooda naaku chaala special ayipoyayi.
+          Mana conversations, mana silly fights, mana laughs, manam kalisi
+          spend chesina konni minutes… ivanni naaku yentha precious oo
+          words lo cheppalenu.
+        </p>
+
+        <p>
+          Naa feelings anni prathi sari perfect ga express cheyyalekapovachu.
+          Konni sarlu nenu overthink chesthanu, silly ga behave chesthanu,
+          mood off chesukuntanu. Kaani naa heart lo unna feelings matram genuine.
+          Nuvvu naaku important, mana memories important,
+          mana madhya vunna bond naaku important.
+        </p>
+
+        <p>
+          Life yeppudu manam anukunnattu vundakapovachu.
+          Manaki busy days vuntayi, misunderstandings vuntayi,
+          konni difficult moments kooda vuntayi. Kaani manam okariki okaram
+          patience tho, honesty tho, understanding tho support chesukuntu,
+          manchi memories create cheskuntu munduku vellalani korukuntunna.
+        </p>
+
+        <p>
+          Nee birthday roju nuvvu entha happiness deserve chesthavo,
+          antha happiness neeku dorakalani korukuntunna.
+          Nee dreams anni fulfil avvali, nuvvu proud ga feel ayye
+          enno moments nee life lo ravali.
+          Nuvvu smile chesthu, peaceful ga, happy ga vundali.
+        </p>
+
+        <p>
+          Ee book lo vunna prathi page, prathi promise, prathi letter lo
+          mana memories ni preserve cheyyalani try chesanu.
+          Yeppudaina ee book malli open chesinappudu, mana journey lo
+          vunna beautiful moments gurthu ravali, nee face lo oka smile
+          ravali ani korukuntunna.
+        </p>
+
+        <p>
+          Wish u a very happiest birthday, nani! ❤️
+        </p>
+
+        <p>
+          Always wishing you happiness, peace, success and lots of
+          beautiful moments in your life.
+        </p>
+
+        <p>
+          Nee bujjamma ❤️
+        </p>
+
+      </div>
+
+      <p class="script-text signature">
+        With love, ♡
+      </p>
+
+      <div class="page-footer">
+
+        <button class="text-btn" onclick="showPage('littleLetters')">
+          ← Letters
+        </button>
+
+        <span>05</span>
+
+        <button class="text-btn" onclick="showPage('lastPage')">
+          Next →
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- 8. LAST PAGE -->
+  <section id="lastPage" class="screen hidden">
+
+    <div class="paper final-paper">
+
+      <p class="eyebrow">The end of this little book</p>
+
+      <h1>But not the end<br>of the story.</h1>
+
+      <p>
+        Twenty-two years of your life have brought you here.<br>
+        And there are so many new chapters waiting for you.
+      </p>
+
+      <p>
+        I hope the next ones are full of peace,<br>
+        beautiful surprises, growth and happiness.
+      </p>
+
+      <p class="script-text">
+        Happy Birthday ♡
+      </p>
+
+      <div class="final-heart">♥</div>
+
+      <button class="primary-btn" onclick="showPage('coverScreen')">
+        Close this book
+      </button>
+
+      <div class="page-footer">
+
+        <button class="text-btn" onclick="showPage('birthdayLetter')">
+          ← Birthday letter
+        </button>
+
+        <span>06</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROMISE POPUP -->
+  <div id="promiseModal" class="modal hidden">
+
+    <div class="modal-paper">
+
+      <button class="modal-close" onclick="closeModal()">×</button>
+
+      <p id="modalNumber" class="eyebrow"></p>
+
+      <h2 id="modalTitle"></h2>
+
+      <p id="modalMessage" class="modal-message"></p>
+
+      <div class="modal-heart">♥</div>
+
+      <button class="primary-btn" onclick="closeModal()">
+        Fold this letter ♡
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- READ WHEN LETTER POPUP -->
+  <div id="letterModal" class="modal hidden">
+
+    <div class="modal-paper">
+
+      <button class="modal-close" onclick="closeLetterModal()">×</button>
+
+      <p class="eyebrow">A tiny letter</p>
+
+      <h2 id="littleLetterTitle"></h2>
+
+      <p id="littleLetterMessage" class="modal-message"></p>
+
+      <button class="primary-btn" onclick="closeLetterModal()">
+        Back to envelopes ♡
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- OPTIONAL MUSIC FILE -->
+  <audio id="backgroundMusic" loop>
+    <source src="images/music.mp3" type="audio/mpeg">
+  </audio>
+
+
+  <!-- JAVASCRIPT -->
+  <script src="script.js"></script>
+
+</body>
+</html>
